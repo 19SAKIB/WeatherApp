@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title> Weather App </title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="api.css">
+</head>
+
+<body>
+     <div class="container">
+          <div class="card">
+               <ion-icon name="locate-outline" class="map-icon"></ion-icon>
+               <h2><span id="location">Data Not Found</span></h2>
+               <h6 id="weather">weather</h6>
+               <h4><span id="tem"></span><sup>o</sup>C</h2>
+                    <img src="" id="icon" alt="">
+                    <button class="referesh-btn" onclick="window.location.reload()"><ion-icon
+                              name="refresh-circle-outline" class="referesh-icon"></ion-icon></button>
+          </div>
+     </div>
+     <!-- include jquery script here  -->
+     <script>
+          // const link = `https://api.openweathermap.org/data/2.5/weather?q=muzaffarnagar&appid=777aa28a239dde3541a0d4c0ae233e10`;
+          const link = `https://api.weatherapi.com/v1/current.json?key=011757d9f2604792a4c171552232709&q=Muzaffarnagar&aqi=no`;
+          const request = new XMLHttpRequest();
+          request.open('GET', link, true);
+          request.onload = function () {
+               let obj = JSON.parse(this.response);
+
+               document.getElementById('location').innerHTML = obj.location.name;
+               document.getElementById('weather').innerHTML = obj.current.condition.text;
+               document.getElementById('tem').innerHTML = obj.current.temp_c;
+               document.getElementById('icon').src = obj.current.condition.icon;
+          }
+
+          // if (request.status >= 200 && request.status < 400) {
+          //      var tem = obj.current.temp_c;
+
+          // }
+          // else {
+          //      console.log("the city data is not avilable!");
+
+          // }
+
+          request.send();
+
+
+
+     </script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
