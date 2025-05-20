@@ -1,0 +1,73 @@
+body{
+     margin: 0;
+     padding: 0;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: #fff;
+     background-color: #343434;
+}
+.container{
+     width: 26%;
+     
+}
+.card{
+     border-radius:15px;
+     background-color: #343434;
+     box-shadow: 5px 5px 10px #191b1b, -5px -5px 10px #595959;
+     padding: 10px 20px ;
+     text-align: center;
+}
+.card .map-icon{
+     font-size: 50px;
+     margin-top: 20px;
+     margin-bottom: -10px;
+
+}
+.card h4{
+     font-size: 3rem;
+     font-weight: 400;
+     margin:0;
+}
+
+img .icon{
+     width: 10%;
+
+}
+
+.card #icon{
+     margin: 5px;
+}
+h6 {
+     text-transform: uppercase;
+     font-size: 20px;
+}
+
+.referesh-btn{
+     display: block;
+     width: 60px;
+     height: 60px;
+     border-radius: 100%;
+     margin: 10px auto;
+     border: 0;
+     color: #9c9c9d;
+     box-shadow: 10px 4px 10px #252525, 5px 5px 10px #4a4a4a;
+     cursor: pointer;
+}
+
+.referesh-btn:hover{
+
+    .referesh-icon{
+     transform: rotate(180deg);
+
+    }
+}
+
+.referesh-icon{
+     font-size: 40px;
+     color: black;
+     font-weight: 500;
+     transition: 0.5s;
+}
